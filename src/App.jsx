@@ -9,10 +9,22 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
 function App() {
+  function reloadGame(picked, draw) {
+    if (pick === picked) {
+      setWin(true);
+      setScore(score + 1);
+    } else if (pick === draw) {
+      setWin(false);
+    } else {
+      setWin(false);
+      setScore(score - 1);
+    }
+  }
   const [score, setScore] = useState(0);
   const [pick, setPick] = useState("");
   const [loader, setLoader] = useState(false);
   const [oponentPick, setOponentPick] = useState("");
+  const [win, setWin] = useState(false);
   const options = {
     Rock: IconRock,
     Paper: IconPaper,
@@ -25,12 +37,19 @@ function App() {
         const random = Math.ceil(Math.random() * 3);
         if (random === 1) {
           setOponentPick("Rock");
+          reloadGame("Paper", "Rock");
         } else if (random === 2) {
           setOponentPick("Paper");
+          reloadGame("Scissors", "Paper");
         } else {
           setOponentPick("Scissors");
+          reloadGame("Rock", "Scissors");
         }
         setLoader(false);
+         setTimeout(() => {
+           setPick("");
+           setOponentPick("");
+         }, 1000);
       }, 1000);
     }
   }, [pick]);
@@ -43,7 +62,7 @@ function App() {
             <div
               className={`option-card  ${
                 pick == "Scissors" ? "scissors" : ""
-              } ${pick == "Rock" ? "pick-rock" : ""}`}
+              } ${pick == "Rock" ? "pick-rock" : ""} `}
             >
               <img src={options[pick]} />
             </div>
@@ -55,7 +74,7 @@ function App() {
               className={` ${loader ? "loader-card" : "oponent-card"}
                ${oponentPick == "Scissors" ? "scissors" : ""} ${
                 oponentPick == "Rock" ? "pick-rock" : ""
-              }`}
+              } ${oponentPick == "Paper" ? "pick-paper" : ""}`}
             >
               {loader ? (
                 <Box sx={{ display: "flex", alignItems: "center" }}>
