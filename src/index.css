@@ -105,7 +105,7 @@ main {
 }
 .rock {
   position: relative;
-  top: -3rem;
+  top: -5rem;
   right: -8rem;
   margin-top: 0;
 }
@@ -122,4 +122,21 @@ main {
   font-size: 1.2rem;
   margin-top: 1.5rem;
   text-align: center;
+}
+.option-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.option-container p{
+  color: #fff;
+  font-size: 1.3rem;
+}
+.option-container img{
+  width: 4rem;
+}
+.option-container:last-child p{
+    position: relative;
+    right: -8rem;
+    top: -5rem;
 }
