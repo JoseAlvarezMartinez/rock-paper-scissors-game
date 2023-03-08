@@ -10,3 +10,32 @@ body {
     rgba(20, 21, 57, 1) 100%
   );
 }
+header {
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: .5rem 2rem;
+  width: 20rem;
+  margin: 0 auto;
+  outline: 0.2rem solid hsl(217, 16%, 45%);
+  border-radius: 0.4rem;
+  margin-top: 2rem;
+}
+h1 {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 4rem;
+}
+
+.score-card {
+  background-color: #fff;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 0.4rem;
+}
+.score-card p {
+  text-align: center;
+}
