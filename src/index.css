@@ -62,7 +62,7 @@ h1 {
 .scissors {
   outline: 10px solid hsl(40, 84%, 53%);
 }
-.rock {
+.rock,.pick-rock {
   outline: 10px solid hsl(349, 70%, 56%);
 }
 .option-card:hover {

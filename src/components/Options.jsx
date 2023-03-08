@@ -1,10 +1,10 @@
 import OptionCard from "./OptionCard";
 import { options } from "../data/options";
-const Options = () => {
+const Options = ({setPick}) => {
   return (
     <main>
       {options.map((option,i) => (
-        <OptionCard key={i} option={option}/>
+        <OptionCard setPick={setPick} key={i} option={option}/>
       ))}
     </main>
   );
