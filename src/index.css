@@ -45,3 +45,20 @@ h1 {
   font-size: 1.5rem;
   color: rgb(99, 99, 99)
 }
+.option-card,.scissors,.rock{
+  margin-top: 2rem;
+  background-color: #fff;
+  width: 5rem;
+  height: 5rem;
+  outline: 10px solid  hsl(230, 89%, 65%);
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+.scissors{
+  outline: 10px solid  hsl(40, 84%, 53%);
+}
+.rock{
+  outline: 10px solid   hsl(349, 70%, 56%);
+}
