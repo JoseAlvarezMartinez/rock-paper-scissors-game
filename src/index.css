@@ -11,12 +11,11 @@ body {
   );
 }
 header {
-  
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: .5rem 2rem;
-  width: 20rem;
+  padding: 0.5rem 2rem;
+  width: 24rem;
   margin: 0 auto;
   outline: 0.2rem solid hsl(217, 16%, 45%);
   border-radius: 0.4rem;
@@ -40,25 +39,46 @@ h1 {
   text-align: center;
   margin-bottom: 0;
 }
-.score-card-score{
-  margin-top: .5rem;
-  font-size: 1.5rem;
-  color: rgb(99, 99, 99)
+.score-card-score {
+  margin-top: 0rem;
+  font-size: 2rem;
+  color: rgb(99, 99, 99);
 }
-.option-card,.scissors,.rock{
+.option-card,
+.scissors,
+.rock {
   margin-top: 2rem;
   background-color: #fff;
   width: 5rem;
   height: 5rem;
-  outline: 10px solid  hsl(230, 89%, 65%);
+  outline: 10px solid hsl(230, 89%, 65%);
   padding: 1rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s;
 }
-.scissors{
-  outline: 10px solid  hsl(40, 84%, 53%);
+.scissors {
+  outline: 10px solid hsl(40, 84%, 53%);
+}
+.rock {
+  outline: 10px solid hsl(349, 70%, 56%);
+}
+.option-card:hover {
+  transform: scale(1.1);
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8rem;
+  place-items: center;
+  width: 25rem;
+  margin: 0 auto;
+  margin-top: 4rem;
 }
 .rock{
-  outline: 10px solid   hsl(349, 70%, 56%);
+  position: relative;
+  top: -3rem;
+  right: -8rem;
 }

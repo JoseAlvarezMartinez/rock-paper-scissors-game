@@ -3,8 +3,8 @@ import { options } from "../data/options";
 const Options = () => {
   return (
     <main>
-      {options.map((option) => (
-        <OptionCard option={option}/>
+      {options.map((option,i) => (
+        <OptionCard key={i} option={option}/>
       ))}
     </main>
   );
