@@ -45,7 +45,7 @@ h1 {
   color: rgb(99, 99, 99);
 }
 .option-card,
-.oponent-card,
+.loader-card,
 .scissors,
 .rock {
   margin-top: 2rem;
@@ -61,8 +61,24 @@ h1 {
   transition: all 0.5s;
 }
 .oponent-card{
+  margin-top: 2rem;
+  background-color: #fff;
+  width: 5rem;
+  height: 5rem;
+  outline: 10px solid rgba(128, 128, 128, 0.486);
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.oponent-card,.loader-card{
   margin: 0 auto;
   margin-top: 2rem;
+}
+.loader-card{
+  outline: 10px solid rgba(128, 128, 128, 0.486);
 }
 .scissors {
   outline: 10px solid hsl(40, 84%, 53%);
@@ -87,6 +103,7 @@ main {
   position: relative;
   top: -3rem;
   right: -8rem;
+  margin-top: 0;
 }
 .center-pick {
   margin-top: 7rem;

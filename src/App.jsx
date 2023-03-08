@@ -4,9 +4,14 @@ import Options from "./components/Options";
 import IconRock from "./assets/icon-rock.svg";
 import IconPaper from "./assets/icon-paper.svg";
 import IconScissors from "./assets/icon-scissors.svg";
+import * as React from "react";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
+
 function App() {
   const [score, setScore] = useState(0);
   const [pick, setPick] = useState("");
+  const [loader, setLoader] = useState(false);
   const [oponentPick, setOponentPick] = useState("");
   const options = {
     Rock: IconRock,
@@ -15,6 +20,7 @@ function App() {
   };
   useEffect(() => {
     if (pick.length) {
+      setLoader(true);
       setTimeout(() => {
         const random = Math.ceil(Math.random() * 3);
         if (random === 1) {
@@ -24,6 +30,7 @@ function App() {
         } else {
           setOponentPick("Scissors");
         }
+        setLoader(false);
       }, 1000);
     }
   }, [pick]);
@@ -45,13 +52,18 @@ function App() {
 
           <div className="center-pick">
             <div
-              className={`oponent-card${
-                oponentPick ? "" : "option-card-oponent"
-              }  ${oponentPick == "Scissors" ? "scissors" : ""} ${
+              className={` ${loader ? "loader-card" : "oponent-card"}
+               ${oponentPick == "Scissors" ? "scissors" : ""} ${
                 oponentPick == "Rock" ? "pick-rock" : ""
               }`}
             >
-              <img src={options[oponentPick]} />
+              {loader ? (
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <CircularProgress color="secondary" />
+                </Box>
+              ) : (
+                <img src={options[oponentPick]} />
+              )}
             </div>
             <h2 className="picked-h2">The house picked</h2>
           </div>

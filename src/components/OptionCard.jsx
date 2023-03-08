@@ -1,4 +1,4 @@
-const OptionCard = ({ setPick,option }) => {
+const OptionCard = ({ setPick, option }) => {
   return (
     <div
       onClick={() => setPick(option.name)}
