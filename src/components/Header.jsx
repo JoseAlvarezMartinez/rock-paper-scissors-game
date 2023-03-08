@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header = ({score}) => {
   return (
     <header>
       {" "}
@@ -10,6 +10,7 @@ const Header = () => {
       </h1>
       <div className="score-card">
         <p>{"score".toUpperCase()}</p>
+        <p className="score-card-score">{score}</p>
       </div>
     </header>
   );
